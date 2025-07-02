@@ -1,4 +1,4 @@
-CREATE TABLE User(
+ CREATE TABLE User(
    user_id UUID PRIMARY KEY,
    first_name VARCHAR(50) NOT NULL,
    last_name VARCHAR(50) NOT NULL,
@@ -29,3 +29,6 @@ CREATE TABLE Bookings(
     status ENUM (pending, confirmed, canceled), NOT NULL
     created_at TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 )
+CREATE TABLE payment(
+     payment_id UUID PRIMARY KEY
+     booking_id  UUID NOT NULL FOREIGN KEY(booking_id) REFERENCES 
